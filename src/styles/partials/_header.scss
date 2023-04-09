@@ -26,9 +26,3 @@
     border-bottom: 1px solid map-get($colors, "secondary");
   }
 }
-
-@media (max-width: 640px) {
-  .header {
-    padding: 0rem 1.5rem;
-  }
-}
