@@ -7,8 +7,6 @@ const ProtectedAuthRoute = () => {
   const location = useLocation();
   const { data } = useSelector((store: RootState) => store.auth.user);
 
-  console.log(data, "data data");
-
   if (data) {
     if (location?.state?.from) {
       return <Navigate to={location?.state?.from} replace />;

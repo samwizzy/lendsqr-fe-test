@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { routes } from "../../config/routes";
 import briefcaseIcon from "/assets/icons/briefcase.svg";
 import homeIcon from "/assets/icons/home.svg";
@@ -38,10 +39,10 @@ function Sidebar(props: IProps) {
               </li>
               {route.data.map((item, i) => (
                 <li key={item.name + i}>
-                  <a href="">
+                  <Link to={item.path}>
                     <img src={item.icon} width={14} alt="" />
                     <span>{item.name}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </React.Fragment>

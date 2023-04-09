@@ -56,7 +56,6 @@ function UserDetails() {
     dispatch(getUserById(id));
   }, []);
 
-  console.log(selectedUser, "selectedUser");
   if (!selectedUser) {
     return <SpinLoader />;
   }
@@ -122,7 +121,6 @@ function UserDetails() {
               onChange={handleChange}
               indicatorColor="primary"
               textColor="inherit"
-              // variant="fullWidth"
               variant="scrollable"
               scrollButtons="auto"
               aria-label="full width tabs example"

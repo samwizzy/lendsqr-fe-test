@@ -24,7 +24,7 @@ function Login() {
   const onSubmit = (data: any) => dispatch(login(data));
 
   return (
-    <main className="h-full sm:h-screen py-24 px-16 bg-white">
+    <main className="h-full sm:h-screen py-24 px-4 sm:px-16 bg-white">
       <div className="max-w-7xl mx-auto mt-24">
         <div className="w-full mb-32">
           <img src="/assets/logo.svg" alt="logo" />

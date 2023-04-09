@@ -59,7 +59,9 @@ Component are created using functions, as its fluid and allows for the use of ho
 
 ### 1. Login
 
-In order to simulate an actual login scenario, a mock was created to give an illusion of a login behavior. You can simply access the application by logging in, you do not necessary have to provide a valid credenials here, any information will suffice.
+In order to simulate an actual login scenario, a mock was created to give an illusion of a login behavior. You can simply access the application by logging in, you do not necessary have to provide a valid credenials here, any information will suffice. The redirection after a user logs in happens simultaneously after a user's session is lost.
+
+> Once a user logs into the application, he/she is been redirected to the page they last visited, this is strategically orchestrated to give them a better user experience.
 
 ### 2. Dashboard
 
@@ -72,6 +74,32 @@ This is where you get to see the list of users on the [lendsqr](lendsqr.com) app
 ### 4. User Details
 
 To get a comprehensive overview of a user data you can simply click on the more icon at the end of the table column to view more details on each user.
+
+## Configurations
+
+### Protected Routes
+
+**Protected Route**
+
+---
+
+_For protecting access from users without authentication_
+
+**Protected Auth Route**
+
+---
+
+_For protecting access from users with authentication_
+
+### SCSS
+
+Using a structure that separate concerns, a partials folder stores each utility feeding off from the variables within the `_variables` file, this files are prefix with a underscore to prevent SASS from transpiling them.
+
+### Axios Config
+
+The parameters for the axios config `[BaseUrl]` here are safely stored within the `.env` file. This is necessary for maintaining a source of truth.
+
+> The .env file was purposely not ignored, so it could be available to a developer who wishes to test after cloning this app.
 
 ## Testing
 
