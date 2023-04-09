@@ -1,0 +1,98 @@
+@use "sass:math";
+
+$dirs: (
+  "margin": m,
+  "padding": p,
+);
+$sides: (
+  "top": t,
+  "right": r,
+  "bottom": b,
+  "left": l,
+  "horizontal": x,
+  "vertical": y,
+);
+
+@each $attr, $dir in $dirs {
+  @each $key, $side in $sides {
+    @each $prop, $size in $sizes {
+      $pixel: $size * 1rem;
+      @if ($side == "x") {
+        .#{$dir}#{$side}-#{$prop} {
+          #{$attr}-left: #{$pixel};
+          #{$attr}-right: #{$pixel};
+        }
+      }
+      @if ($side == "y") {
+        .#{$dir}#{$side}-#{$prop} {
+          #{$attr}-top: #{$pixel};
+          #{$attr}-bottom: #{$pixel};
+        }
+      }
+      @if ($side != "x" or $side != "y") {
+        .#{$dir}-#{$prop} {
+          #{$attr}: #{$pixel};
+        }
+        .#{$dir}#{$side}-#{$prop} {
+          #{$attr}-#{$key}: #{$pixel};
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  @each $attr, $dir in $dirs {
+    @each $key, $side in $sides {
+      @each $prop, $size in $sizes {
+        $pixel: $size * 1rem;
+        @if ($side == "x") {
+          .sm\:#{$dir}#{$side}-#{$prop} {
+            #{$attr}-left: #{$pixel};
+            #{$attr}-right: #{$pixel};
+          }
+        }
+        @if ($side == "y") {
+          .sm\:#{$dir}#{$side}-#{$prop} {
+            #{$attr}-top: #{$pixel};
+            #{$attr}-bottom: #{$pixel};
+          }
+        }
+        @if ($side != "x" or $side != "y") {
+          .sm\:#{$dir}-#{$prop} {
+            #{$attr}: #{$pixel};
+          }
+          .sm\:#{$dir}#{$side}-#{$prop} {
+            #{$attr}-#{$key}: #{$pixel};
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $axis, $pos in (x: left, y: top) {
+  @each $key, $size in $sizes {
+    $pixel: $size * 1rem;
+
+    .space-#{$axis}-#{$key} > * + * {
+      margin-#{$pos}: #{$pixel};
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  @each $axis, $pos in (x: left, y: top) {
+    @each $key, $size in $sizes {
+      $pixel: $size * 1rem;
+
+      .sm\:space-#{$axis}-#{$key} > * + * {
+        margin-#{$pos}: #{$pixel};
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
+}

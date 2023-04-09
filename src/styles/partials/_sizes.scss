@@ -1,0 +1,77 @@
+@each $i, $val in $sizes {
+  $pixel: $val * 1rem;
+
+  .w-#{$i} {
+    width: #{$pixel};
+  }
+}
+
+@media (min-width: 640px) {
+  @each $i, $val in $sizes {
+    $pixel: $val * 1rem;
+
+    .sm\:w-#{$i} {
+      width: #{$pixel};
+    }
+  }
+}
+
+@each $key, $val in $maxwidths {
+  .max-w-#{$key} {
+    max-width: #{$val};
+  }
+  .max-h-#{$key} {
+    max-height: #{$val};
+  }
+  .min-w-#{$key} {
+    min-width: #{$val};
+  }
+  .min-h-#{$key} {
+    min-height: #{$val};
+  }
+}
+
+@media (min-width: 640px) {
+  @each $key, $val in $maxwidths {
+    .sm\:max-w-#{$key} {
+      max-width: #{$val};
+    }
+    .sm\:max-h-#{$key} {
+      max-height: #{$val};
+    }
+    .sm\:min-w-#{$key} {
+      min-width: #{$val};
+    }
+    .sm\:min-h-#{$key} {
+      min-height: #{$val};
+    }
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-screen {
+  height: 100vh;
+}
+
+@media (min-width: 640px) {
+  .sm\:w-full {
+    width: 100%;
+  }
+  .sm\:h-full {
+    height: 100%;
+  }
+  .sm\:w-screen {
+    width: 100vw;
+  }
+  .sm\:h-screen {
+    height: 100vh;
+  }
+}

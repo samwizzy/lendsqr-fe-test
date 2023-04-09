@@ -1,0 +1,46 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.static {
+  position: static;
+}
+.fixed {
+  position: fixed;
+}
+.sticky {
+  position: sticky;
+}
+
+@media (min-width: 640px) {
+  .sm\:relative {
+    position: relative;
+  }
+  .sm\:absolute {
+    position: absolute;
+  }
+  .sm\:static {
+    position: static;
+  }
+  .sm\:fixed {
+    position: fixed;
+  }
+  .sm\:sticky {
+    position: sticky;
+  }
+}
+
+.top-0 {
+  top: 0px;
+}
+.right-0 {
+  right: 0px;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.left-0 {
+  left: 0px;
+}

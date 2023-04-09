@@ -1,0 +1,28 @@
+$positions: (
+  "top": t,
+  "right": r,
+  "bottom": b,
+  "left": l,
+);
+
+.border {
+  border: 1px solid #666;
+}
+
+@each $key, $color in $colors {
+  @for $i from 1 through 8 {
+    .border-#{$key}-#{$i} {
+      border: #{$i}px solid $color;
+    }
+
+    @each $key, $pos in $positions {
+      .border-#{$pos} {
+        border-#{$key}: #{$i} solid #{$color};
+      }
+    }
+  }
+}
+
+.rounded {
+  border-radius: 8px;
+}

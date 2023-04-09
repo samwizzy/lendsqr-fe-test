@@ -1,0 +1,53 @@
+@each $key, $fontVal in $fonts {
+  $fontSize: nth($fontVal, 1);
+  $lineHeight: nth($fontVal, 2);
+
+  .#{$key} {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+  }
+}
+
+@each $key, $color in $colors {
+  .text-#{$key} {
+    color: #{$color};
+  }
+}
+
+@each $key, $weight in $weights {
+  .font-#{$key} {
+    font-weight: #{$weight};
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  @each $key, $fontVal in $fonts {
+    $fontSize: nth($fontVal, 1);
+    $lineHeight: nth($fontVal, 2);
+
+    .sm\:#{$key} {
+      font-size: $fontSize;
+      line-height: $lineHeight;
+    }
+  }
+
+  @each $key, $color in $colors {
+    .sm\:text-#{$key} {
+      color: #{$color};
+    }
+  }
+
+  @each $key, $weight in $weights {
+    .sm\:font-#{$key} {
+      font-weight: #{$weight};
+    }
+  }
+
+  .sm\:uppercase {
+    text-transform: uppercase;
+  }
+}

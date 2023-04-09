@@ -1,0 +1,15 @@
+@use "sass:color";
+
+@each $key, $color in $colors {
+  .bg-#{$key} {
+    background-color: #{$color};
+  }
+}
+
+@media (min-width: 640px) {
+  @each $key, $color in $colors {
+    .sm\:bg-#{$key} {
+      background-color: #{$color};
+    }
+  }
+}

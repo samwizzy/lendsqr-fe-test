@@ -1,0 +1,39 @@
+$zIndex: 1200;
+$lightBgColor: lighten(map-get($colors, "primary"), 46%);
+$mediumBgColor: lighten(map-get($colors, "primary"), 24%);
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 283px;
+  height: 100vh;
+  background-color: $lightBgColor;
+  z-index: $zIndex;
+  overflow-y: auto;
+  transition: transform 250ms ease-in;
+  transform: translateX(-100%);
+
+  .logo-header {
+    background-color: $lightBgColor;
+  }
+
+  .hamburger {
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 1300;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background-color: #{$mediumBgColor}50;
+    cursor: pointer;
+  }
+}
+
+.open-drawer {
+  transform: translateX(0);
+}

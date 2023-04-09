@@ -1,0 +1,96 @@
+.grid {
+  display: grid;
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+}
+
+@media (min-width: 640px) {
+  @for $i from 1 through 12 {
+    .sm\:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+    .sm\:row-span-#{$i} {
+      grid-row: span #{$i} / span #{$i};
+    }
+  }
+}
+
+@each $key, $val in $sizes {
+  $pixel: $val * 1rem;
+
+  .gap-#{$key} {
+    gap: #{$pixel};
+  }
+  .gap-x-#{$key} {
+    column-gap: #{$pixel};
+  }
+  .gap-y-#{$key} {
+    row-gap: #{$pixel};
+  }
+}
+
+@media (min-width: 640px) {
+  @each $key, $val in $sizes {
+    $pixel: $val * 1rem;
+
+    .sm\:gap-#{$key} {
+      gap: #{$pixel};
+    }
+    .sm\:gap-x-#{$key} {
+      column-gap: #{$pixel};
+    }
+    .sm\:gap-y-#{$key} {
+      row-gap: #{$pixel};
+    }
+  }
+}
+
+.place-items-start {
+  place-items: start;
+}
+.place-items-end {
+  place-items: end;
+}
+.place-items-center {
+  place-items: center;
+}
+.place-items-baseline {
+  place-items: baseline;
+}
+.place-items-stretch {
+  place-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .sm\:place-items-start {
+    place-items: start;
+  }
+  .sm\:place-items-end {
+    place-items: end;
+  }
+  .sm\:place-items-center {
+    place-items: center;
+  }
+  .sm\:place-items-baseline {
+    place-items: baseline;
+  }
+  .sm\:place-items-stretch {
+    place-items: stretch;
+  }
+}
