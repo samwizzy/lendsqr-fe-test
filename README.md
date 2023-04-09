@@ -2,11 +2,10 @@
 
 This is a preliminary React project created with Vite.
 
-> All assets are within the `assets` public folder. The svg format resides in the icons folder.
+> All assets are within the `public/assets` folder. The svg format resides in the icons folder.
 
-The font family used for this project are Work Sans & Avenir Next.
-
->
+> The font family used for this project are Work Sans & Avenir Next.
+> NPM is the default node package manager adopted for this project.
 
 ## Get started
 
@@ -22,11 +21,11 @@ Once your installation is completed, run:
 npm run dev
 ```
 
-> This above will be hosted at http://localhost:5173
+> The above will be hosted at `http://localhost:5173`
 
 ## Files
 
-This projectt comprises of four pages namely:
+This project comprises of four pages namely:
 
 - Login
 - Dashboard
@@ -36,13 +35,14 @@ This projectt comprises of four pages namely:
 ## Technologies Used
 
 - [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
 - [Typescript](https://www.typescriptlang.org/)
 - [SASS (for CSS utility)](https://sass-lang.com/)
 - [Material-UI](https://mui.com/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - Localstorage (to persist user's data)
 - [Axios (HTTP Request)](https://axios-http.com/)
-- [moment (to format the date joined column)](https://momentjs.com/)
+- [Momentjs (to format the date joined column)](https://momentjs.com/)
 
 ## Components
 
@@ -79,13 +79,18 @@ React has always been known for always providing testing support as it ships wit
 
 Should the project progress, there will be a need to write integrated test or e2e test using tools like jest or cypress.
 
-- [ ] Jest
-- [ ] Cypress
+- [ ] [Jest](https://jestjs.io/)
+- [x] [Cypress](https://www.cypress.io/)
 
 ## Developer Info
 
 **Name**:
 _Samuel Okeke_
+
+**Socials**:
+_[Linkedin](https://linkedin.com/in/samuel-okeke)_
+_[Twitter](https://twitter.com/sampedia)_
+_[Portfolio](https://samuelokeke.netlify.app)_
 
 **Language**:
 _Javascript / Typescript_
