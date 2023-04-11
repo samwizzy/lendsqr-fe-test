@@ -42,7 +42,7 @@ function Header(props: IProps) {
       </Box>
 
       <menu className="menu">
-        <ul className="menu-list space-x-2 sm:space-x-8">
+        <ul className="menu-list space-x-4 sm:space-x-8">
           <li className="hidden sm:block">
             <a href="">Docs</a>
           </li>

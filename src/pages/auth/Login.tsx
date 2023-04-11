@@ -8,6 +8,7 @@ import { InputAdornment, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store";
 import { login } from "../../store/slices/auth/login.slice";
+import { Link } from "react-router-dom";
 
 function Login() {
   const dispatch: AppDispatch = useDispatch();
@@ -27,7 +28,9 @@ function Login() {
     <main className="h-full sm:h-screen py-24 px-4 sm:px-16 bg-white">
       <div className="max-w-7xl mx-auto mt-24">
         <div className="w-full mb-32">
-          <img src="/assets/logo.svg" alt="logo" />
+          <Link to="/">
+            <img src="/assets/logo.svg" alt="logo" />
+          </Link>
         </div>
 
         <div className="w-full grid grid-cols-2 gap-x-8 gap-y-8">
@@ -47,7 +50,7 @@ function Login() {
                   <Controller
                     name="email"
                     control={control}
-                    render={({ field }) => <OutlinedInput placeholder="Email" {...field} />}
+                    render={({ field }) => <OutlinedInput aria-label="email" placeholder="Email" {...field} />}
                   />
                 </FormControl>
                 <FormControl>
@@ -57,6 +60,7 @@ function Login() {
                     render={({ field }) => (
                       <OutlinedInput
                         {...field}
+                        aria-label="password"
                         type={showPassword ? "text" : "password"}
                         placeholder="Password"
                         endAdornment={
@@ -78,7 +82,7 @@ function Login() {
                 </Typography>
               </div>
 
-              <Button size="large" type="submit" variant="contained" color="primary" fullWidth>
+              <Button size="large" id="submit" type="submit" variant="contained" color="primary" fullWidth>
                 Log in
               </Button>
             </form>

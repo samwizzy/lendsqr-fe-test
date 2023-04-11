@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../../config/routes";
 import briefcaseIcon from "/assets/icons/briefcase.svg";
 import homeIcon from "/assets/icons/home.svg";
+import { HiOutlineChevronDown } from "react-icons/hi";
 
 type IProps = {
   sidebarOpen: boolean;
@@ -13,21 +14,26 @@ function Sidebar(props: IProps) {
   return (
     <aside className="h-screen sidebar overflow-auto">
       <div className="logo-header">
-        <img src="/assets/logo.svg" alt="" />
+        <Link to="/">
+          <img src="/assets/logo.svg" width={144} alt="" />
+        </Link>
       </div>
       <nav className="navigation">
         <ul className="">
           <li>
-            <a href="">
-              <img src={briefcaseIcon} width={14} alt="org" />
-              <span>Switch Organization</span>
+            <a href="" className="justify-between">
+              <div className="flex items-center">
+                <img src={briefcaseIcon} width={14} alt="org" />
+                <span>Switch Organization</span>
+              </div>
+              <HiOutlineChevronDown />
             </a>
           </li>
           <li>
-            <a href="">
+            <Link to="/dashboard">
               <img src={homeIcon} width={14} alt="home" />
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
         </ul>
 

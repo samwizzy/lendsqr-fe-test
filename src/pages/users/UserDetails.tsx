@@ -64,8 +64,8 @@ function UserDetails() {
     <div className="py-8 sm:py-16">
       <header className="mb-4 sm:mb-8">
         <div className="flex items-center mb-8">
-          <img src={backArrowIcon} width={24} className="mr-6" alt="" />
-          <Link to="/users" className="text-base">
+          <img src={backArrowIcon} width={24} className="mr-4" alt="" />
+          <Link to="/users" className="text-base text-secondary no-underline">
             Back to users
           </Link>
         </div>
@@ -102,7 +102,7 @@ function UserDetails() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-secondary font-medium text-base mb-4">User's Tier</h3>
+                  <h3 className="text-secondary font-medium text-base mb-2 sm:mb-4">User's Tier</h3>
                   <Stack direction="row" spacing={2}>
                     <img src={activeStarIcon} alt="active" />
                     <img src={inactiveStarIcon} alt="inactive" />
@@ -110,7 +110,7 @@ function UserDetails() {
                   </Stack>
                 </div>
                 <div>
-                  <h3 className="text-secondary font-medium text-2xl mb-4">₦200,000.00</h3>
+                  <h3 className="text-secondary font-medium text-2xl mb-2 sm:mb-4">₦200,000.00</h3>
                   <p className="text-xs">9912345678/Providus Bank</p>
                 </div>
               </Stack>

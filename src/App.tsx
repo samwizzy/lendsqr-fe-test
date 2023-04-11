@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import "./config/axiosConfig";
-// import "rsuite/dist/rsuite.min.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import ProtectedAuthRoute from "./routes/ProtectedAuthRoute";
@@ -30,17 +29,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Suspense fallback={<SpinLoader />}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navigate to="login" replace />} />
+        <Routes>
+          <Route path="/" element={<Navigate to="login" replace />} />
 
-            {ProtectedRoutes()}
+          {ProtectedRoutes()}
 
-            <Route element={<ProtectedAuthRoute />}>
-              <Route path="login" element={<Login />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+          <Route element={<ProtectedAuthRoute />}>
+            <Route path="login" element={<Login />} />
+          </Route>
+        </Routes>
       </Suspense>
     </ThemeProvider>
   );

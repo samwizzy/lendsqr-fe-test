@@ -61,7 +61,9 @@ function GeneralDetails(props: IProps) {
           <dd className="font-medium text-secondary">{user.education.employmentStatus}</dd>
           <dt className="font-light text-xs uppercase">Monthly income</dt>
           <dd className="font-medium text-secondary">
-            {user.education.monthlyIncome[1]} — {user.education.monthlyIncome[2]}
+            {"\u20A6"}
+            {user.education.monthlyIncome[0] || 0} — {"\u20A6"}
+            {user.education.monthlyIncome[1] || 0}
           </dd>
         </dl>
         <dl className="col-span-5 sm:col-span-1">

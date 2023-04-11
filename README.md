@@ -103,12 +103,15 @@ The parameters for the axios config `[BaseUrl]` here are safely stored within th
 
 ## Testing
 
-React has always been known for always providing testing support as it ships with the jest framework, and react-testing-library. However i would like to use a different testing framework for this project.
+React.js is known for always providing testing support as it ships with the jest framework, and react-testing-library. However, because i am using [vite](https://vitejs.dev/) for this project, i had to use a different testing framework for this project called Vitest, a test framework built on top of Vite and could also be used with a few other js frameworks because its framework agnostic, but with Vite it comes on demand.
 
-Should the project progress, there will be a need to write integrated test or e2e test using tools like jest or cypress.
+Should the project progress, there will be a need to write integrated or e2e test using tools like puppeteer or cypress.
+The checked items on the list below are the testing tools used on this project.
 
-- [ ] [Jest](https://jestjs.io/)
-- [x] [Cypress](https://www.cypress.io/)
+- [x] [Jest](https://jestjs.io/)
+- [x] [Vitest](https://vitest.dev/)
+- [ ] [Cypress](https://www.cypress.io/)
+- [ ] [Puppeteer](https://pptr.dev/)
 
 ## Developer Info
 

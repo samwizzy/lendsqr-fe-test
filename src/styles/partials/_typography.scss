@@ -51,3 +51,31 @@
     text-transform: uppercase;
   }
 }
+
+.underline {
+  text-decoration-line: underline;
+}
+.overline {
+  text-decoration-line: overline;
+}
+.line-through {
+  text-decoration-line: line-through;
+}
+.no-underline {
+  text-decoration-line: none;
+}
+
+@media (max-width: 640px) {
+  .sm\:underline {
+    text-decoration-line: underline;
+  }
+  .sm\:overline {
+    text-decoration-line: overline;
+  }
+  .sm\:line-through {
+    text-decoration-line: line-through;
+  }
+  .sm\:no-underline {
+    text-decoration-line: none;
+  }
+}
