@@ -13,7 +13,11 @@ import { Link } from "react-router-dom";
 function Login() {
   const dispatch: AppDispatch = useDispatch();
   const [showPassword, setShowPassword] = React.useState(false);
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm({
     defaultValues: {
       email: "",
       password: "",
@@ -49,18 +53,22 @@ function Login() {
                 <FormControl fullWidth sx={{ mb: 3 }}>
                   <Controller
                     name="email"
+                    rules={{ required: "Email is required" }}
                     control={control}
-                    render={({ field }) => <OutlinedInput aria-label="email" placeholder="Email" {...field} />}
+                    render={({ field }) => (
+                      <OutlinedInput {...field} inputProps={{ "aria-label": "email" }} placeholder="Email" />
+                    )}
                   />
                 </FormControl>
                 <FormControl>
                   <Controller
                     name="password"
+                    rules={{ required: "Password is required" }}
                     control={control}
                     render={({ field }) => (
                       <OutlinedInput
                         {...field}
-                        aria-label="password"
+                        inputProps={{ "aria-label": "password" }}
                         type={showPassword ? "text" : "password"}
                         placeholder="Password"
                         endAdornment={
@@ -78,11 +86,11 @@ function Login() {
 
               <div className="mb-6">
                 <Typography className="uppercase" sx={{ color: "primary.main" }} variant="button">
-                  Forgot PASSWORD?
+                  Forgot Password?
                 </Typography>
               </div>
 
-              <Button size="large" id="submit" type="submit" variant="contained" color="primary" fullWidth>
+              <Button size="large" disabled={!isValid} type="submit" variant="contained" color="primary" fullWidth>
                 Log in
               </Button>
             </form>
